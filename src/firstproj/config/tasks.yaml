@@ -1,17 +1,31 @@
 research_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
+    Conduct in-depth research on the current Indian stock market landscape.
+    Identify ongoing trends, sector performance, macroeconomic factors, and company-specific news.
+    Highlight any patterns, shifts in investor sentiment, regulatory changes, or upcoming events that may influence the market.
+    Make sure your findings are relevant to the current year, {current_year}, and include data-supported insights and stock-specific highlights.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+    A list of 10 bullet points outlining the most relevant and interesting insights about the Indian stock market,
+    including emerging trends, promising sectors, or specific stocks showing momentum or undervaluation.
+  agent: stock_market_analyst
 
 reporting_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Review the research findings on the Indian stock market and expand each point into a detailed section.
+    Ensure each section includes supporting data, references to charts or economic indicators where applicable,
+    and offers clear reasoning behind any trend or stock recommendation.
+    The final report should be accessible to investors and analysts alike, helping them understand the current state
+    of the market and make informed investment decisions.
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    A comprehensive, markdown-formatted report with each key point from the research expanded into a structured section.
+    Include subheadings, analysis, data-backed observations, and stock suggestions where applicable.
+    Do not wrap the output in '```'.
+  agent: stock_market_analyst
+
+
+stock_recommendation_task:
+  description: >
+    Based on current market trends and data, suggest 3–5 stocks to invest in for short, mid, and long term.
+  expected_output: >
+    A list with clear stock names, reasons for recommendation, risk levels, and time horizon.
+  agent: stock_market_analyst
